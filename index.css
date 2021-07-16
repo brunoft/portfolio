@@ -1,140 +1,176 @@
-
 /* reset */
-h1, h2, h3, h4 ,h5,h6 {
-    margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
-body{
-    margin: 0;
-    height: auto;
-    min-height: 100%;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white;
+body {
+  margin: 0;
+  height: auto;
+  min-height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: white;
 }
-.container{
-    max-width: 1140px;
-    margin: 0px auto;
+.container {
+  max-width: 1140px;
+  margin: 0px auto;
 }
-.content{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: rgb(38, 41, 43);
-    position: relative;
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(38, 41, 43);
+  position: relative;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 .title {
-    position: relative;
-    display: block;
-    overflow: hidden; 
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 0em;
+  font-size: 3.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 32px 0;
+  border-right: 0.125em solid #045ace;
+  animation-name: blink-start, typing, blink-end;
+  animation-duration: 1s, 1s, 1s;
+  animation-timing-function: linear, steps(13, end), linear;
+  animation-delay: 0s, 1s, 2s;
+  animation-iteration-count: 1, 1, infinite;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+}
+
+.title span {
+  display: block;
+  width: 8em;
+}
+
+@keyframes typing {
+  from {
     width: 0em;
-    font-size: 3.5rem;
-    font-weight: 600;
-    text-align: center;
-    margin: 32px 0;
-    border-right: .125em solid #045ACE;
-    animation-name: blink-start, typing, blink-end;
-    animation-duration: 1s, 1s, 1s;
-    animation-timing-function: linear, steps(13, end), linear;
-    animation-delay: 0s, 1s, 2s;
-    animation-iteration-count: 1, 1, infinite;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
   }
-  
-  .title span {
-    display: block;
+  to {
     width: 8em;
   }
-  
-  @keyframes typing {
-    from { width: 0em; }
-    to   { width: 8em; }
-  }
-  
-  @keyframes blink-start {
-    from, to { border-color: #045ACE; }
-    50% { border-color: transparent; }
-  }
-  
-  @keyframes blink-end {
-    from, to { border-color: #045ACE; }
-    50% { border-color: transparent; }
-  }
-.profile{
-    display: flex;
-    justify-content: center;
 }
-.circle{
-    height: 200px;
-    width: 200px;
-    background-color: rgb(38, 41, 43);
-    border-radius: 50%;
-    background-image: url("image/profile.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    position: relative;
-    display: block;
-    overflow: hidden;
-    opacity: 0;
-    transition: all .0001s ease-in-out;
-    animation: logo .45s ease-out 2.4s 1 normal forwards;
+
+@keyframes blink-start {
+  from,
+  to {
+    border-color: #045ace;
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes blink-end {
+  from,
+  to {
+    border-color: #045ace;
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+.profile {
+  display: flex;
+  justify-content: center;
+}
+.circle {
+  height: 200px;
+  width: 200px;
+  background-color: rgb(38, 41, 43);
+  border-radius: 50%;
+  background-image: url("image/profile.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.0001s ease-in-out;
+  animation: logo 0.45s ease-out 2.4s 1 normal forwards;
 }
 @keyframes logo {
-    0%   { transform: rotate(25deg) scale(.01); opacity: 0; }
-    70%  { transform: scale(1.4); opacity: 1; }
-    100% { transform: scale(1); opacity: 1; }
+  0% {
+    transform: rotate(25deg) scale(0.01);
+    opacity: 0;
   }
+  70% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
-.links{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
 }
-ul{
-    display: flex;
-    padding: 0;
+ul {
+  display: flex;
+  padding: 0;
 }
-li{
-    display: block;
-    margin: 0 8px;
-    cursor: pointer;
+li {
+  display: block;
+  margin: 0 8px;
+  cursor: pointer;
 }
-li a{
-    display: inline-block;
-    /* transition: background-color .5s ease-in-out; */
-    animation: icons 2s ease-out 0s 1 normal forwards;
-    
+li a {
+  display: inline-block;
+  /* transition: background-color .5s ease-in-out; */
+  animation: icons 2s ease-out 0s 1 normal forwards;
 }
 
 /* icons */
 
 @keyframes icons {
-    0%    { transform: translateY(3em); opacity: 0; }
-    70%   { transform: translateY(-.5em); opacity: 1; }
-    100%  { transform: translateY(0em); opacity: 1; }
+  0% {
+    transform: translateY(3em);
+    opacity: 0;
   }
-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  70% {
+    transform: translateY(-0.5em);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0em);
+    opacity: 1;
+  }
 }
-.content-footer{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; 
-    color: #ffffff;
-    height: 80px;
-    padding-right: 24px;
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.content-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #ffffff;
+  height: 80px;
+  padding-right: 24px;
 }
 
-@media only screen and (max-width: 600px)  {
-
-    .title{
-        font-size: 2rem;
-    }
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
 }
