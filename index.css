@@ -9,17 +9,13 @@ h6 {
 }
 body {
   margin: 0;
-  height: calc(var(--vh, 1vh) * 100);
-  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: white;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
 }
 .container {
-  max-width: 1140px;
-  margin: 0px auto;
-}
-.content {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,6 +23,10 @@ body {
   height: 100%;
   background-color: rgb(38, 41, 43);
   position: relative;
+}
+.content {
+  max-width: 1140px;
+  margin: 0px auto;
 }
 
 .title {
